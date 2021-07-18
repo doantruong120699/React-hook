@@ -4,6 +4,7 @@ import './App.css';
 import Pagiantion from './components/Pagination';
 import PostList from './components/PostList';
 import PostFiltersForm from './components/PostFiltersForm';
+import Clock from './components/Clock';
 // import TodoForm from './components/TodoForm';
 // import ColorBox from './components/ColorBox';
 // import TodoList from './components/TodoList';
@@ -77,15 +78,18 @@ function App() {
             title_like: newFilters.searchTerm,
         });
     }
+    const [showClock, setShowClock] = useState(true);
     return (
         <div className="App">
             <h1>Welcom to React Hooks!</h1>
             {/* <ColorBox></ColorBox> */}
             {/* <TodoForm onSubmit={handleTodoFormSubmit}></TodoForm>
             <TodoList todos={todoList} onTodoClick={handleTodoList}></TodoList> */}
-            <PostFiltersForm onSubmit={handleFiltersChange}></PostFiltersForm>
+            {/* <PostFiltersForm onSubmit={handleFiltersChange}></PostFiltersForm>
             <PostList posts={postList} ></PostList>
-            <Pagiantion pagiantion={pagination} onPageChange={handlePageChange}></Pagiantion>
+            <Pagiantion pagiantion={pagination} onPageChange={handlePageChange}></Pagiantion> */}
+            {showClock && <Clock></Clock>}
+            <button onClick={() => setShowClock(false)}>Hide Clock</button>
         </div>
     );
 }
